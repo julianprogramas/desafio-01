@@ -6,29 +6,29 @@ class ProductManager {
     }
 
     checkFile = () => {
-        // If the file doesn't exists, we create it. Otherwise, do nothing
+        // si el producto no existe, lo crea
         !existsSync(this.path) && writeFileSync(this.path, "[]", "utf-8");
     };
 
-    async addProduct(title, description, price, thumbnail, code, stock) {
-        const prodObj = { title, description, price, thumbnail, code, stock };
+    async addProduct(titulo, descripcion, precio, imagen, codigo, stock) {
+        const prodObj = { titulo, descripcion, precio, imagen, codigo, stock };
 
-        // Check if the product has missing data (empty value)
+        // Comprueva si al producto le falta completar algun dato 
         if (Object.values(prodObj).includes("") || Object.values(prodObj).includes(null)) {
-            console.log("Missing product field");
+            console.log("'ERROR',campo incompleto");
         } else {
             this.checkFile();
             try {
-                // Reading file
+                // lee los elementos
                 const read = await fs.readFile(this.path, "utf-8");
                 let data = JSON.parse(read);
-                // Check existing product code
+                // comprueba si ya existe el elemento
                 if (data.some((elem) => elem.code === prodObj.code)) {
                     throw "Code " + code + " already exists, cannot add";
                 } else {
                     let newID;
                     !data.length ? (newID = 1) : (newID = data[data.length - 1].id + 1);
-                    // Push obj to the read array
+                    // guarda el producto en el array
                     data.push({ ...prodObj, id: newID });
                     // Write data to the file
                     await fs.writeFile(this.path, JSON.stringify(data), "utf-8");
@@ -58,7 +58,7 @@ class ProductManager {
             const data = JSON.parse(read);
             const found = data.find((prod) => prod.id === id);
             if (!found) {
-                throw "ID not found";
+                throw "ID no encontrado";
             } else {
                 console.log(found);
                 return found;
@@ -68,22 +68,22 @@ class ProductManager {
         }
     }
 
-    async updateProduct(id, title, description, price, thumbnail, code, stock) {
+    async updateProduct(id, titulo, descripcion, precio, imagen, codigo, stock) {
         this.checkFile();
         try {
             const read = await fs.readFile(this.path, "utf-8");
             const data = JSON.parse(read);
             if (data.some((prod) => prod.id === id)) {
                 const index = data.findIndex((prod) => prod.id === id);
-                data[index].title = title;
-                data[index].description = description;
-                data[index].price = price;
-                data[index].thumbnail = thumbnail;
-                data[index].code = code;
+                data[index].titulo = titulo;
+                data[index].descripcion = descripcion;
+                data[index].precio = precio;
+                data[index].imagen = imagen;
+                data[index].codigo = codigo;
                 data[index].stock = stock;
                 await fs.writeFile(this.path, JSON.stringify(data), "utf-8");
             } else {
-                throw "ID not found";
+                throw "ID no encontrado";
             }
         } catch (err) {
             console.log(err);
@@ -100,7 +100,7 @@ class ProductManager {
                 data.splice(index, 1);
                 await fs.writeFile(this.path, JSON.stringify(data), "utf-8");
             } else {
-                throw "ID " + id + " not found";
+                throw "ID " + id + " no existente";
             }
         } catch (err) {
             console.log(err);
@@ -111,12 +111,7 @@ class ProductManager {
 // TESTING
 // - Crear instancia de ProductManager
 const manager = new ProductManager("./database.json");
-// - Agregar productos
-//manager.addProduct("producto prueba1", "Este es un producto prueba1", 200, "Sin imagen", "abc123", 25);
-//manager.addProduct("producto prueba2", "Este es un producto prueba2", 200, "Sin imagen", "bc123", 25);
-//manager.addProduct("producto prueba3", "Este es un producto prueba3", 200, "Sin imagen", "c123", 25);
-//manager.addProduct("producto prueba4", "Este es un producto prueba4", 200, "Sin imagen", "123", 25);
-//manager.addProduct("producto prueba5", "Este es un producto prueba5", 200, "Sin imagen", "23", 25);
+
 manager.getProducts();
 //manager.getProductByID(2);
 //manager.updateProduct(...)

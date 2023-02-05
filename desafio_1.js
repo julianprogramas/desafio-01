@@ -52,27 +52,27 @@ class Product {
 // Pruebas
 
 // crea el array productos[] (vacio)
-const productos = new ProductManager();
+//const productos = new ProductManager();
 
 // se llama a getproducts que devuelve el array vacio []
-productos.getProducts(); 
+//productos.getProducts(); 
 
 // se crea un producto para agregar al array vacio creado anteriormente
-let producto_nuevo = new Product("Chomba Lacoste", "Para Hombre Polo Classic Fit Algodón Azul", 22.000, "https://http2.mlstatic.com/D_NQ_NP_835018-MLA51921242320_102022-O.webp", "ch700", 10);
+//let producto_nuevo = new Product("Chomba Lacoste", "Para Hombre Polo Classic Fit Algodón Azul", 22.000, "https://http2.mlstatic.com/D_NQ_NP_835018-MLA51921242320_102022-O.webp", "ch700", 10);
 
 // se añade el producto al array
-productos.addProduct(producto_nuevo);
+//productos.addProduct(producto_nuevo);
 
 // Se llama a getProduct que deverá devolver el producto recien agregado
-productos.getProducts(); 
+//productos.getProducts(); 
 
 // se añade un nuevo producto igual al anterior debe arrojar error si el mismo ya existe
-producto_nuevo = new Product("Chomba Lacoste", "Para Hombre Polo Classic Fit Algodón Azul", 22.000, "https://http2.mlstatic.com/D_NQ_NP_835018-MLA51921242320_102022-O.webp", "ch700", 10);
+//producto_nuevo = new Product("Chomba Lacoste", "Para Hombre Polo Classic Fit Algodón Azul", 22.000, "https://http2.mlstatic.com/D_NQ_NP_835018-MLA51921242320_102022-O.webp", "ch700", 10);
 // en caso de no existir lo agregamos
-productos.addProduct(producto_nuevo);
+//productos.addProduct(producto_nuevo);
 
 // llamo a los productos por ID
 // codigo existente lo muestra
-productos.getProductByID(1);
+//productos.getProductByID(1);
 //codigo inexistentemuestra "el producto no existe
-productos.getProductByID(2);
+//productos.getProductByID(2);

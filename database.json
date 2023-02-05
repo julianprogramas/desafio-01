@@ -1,46 +1,49 @@
 [
     {
-    "title":"producto prueba1",
-    "description":"Este es un producto prueba1",
-    "price":200,
-    "thumbnail":"Sin imagen",
-    "code":"abc123",
-    "stock":25,
-    "id":1
+    "titulo": "Chomba De Hombre Polo",
+    "descripcion": "Chomba De Hombre Entallada Manga Corta Gris",
+    "precio": 5000,
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_615213-MLA47498329492_092021-O.webp",
+    "codigo": "CH1001",
+    "stock": 10,
+    "id": 1
+    },
+    
+    {
+    "titulo": "Chomba Polo Dama",
+    "descripcion": "Chomba Remera Polo De Pique Manga Corta Dama Empresas",
+    "precio": 8079,
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_850087-MLA51666355364_092022-O.webp",
+    "codigo": "CH1002",
+    "stock": 20,
+    "id": 2
+    },
+    
+    {
+    "titulo": "Chomba Pampero Lisa Premium",
+    "descripcion": "Chomba Pampero Micropique Lisa Premium Talles S Al Xxxl",
+    "precio": 7.830,
+    "imagen": "Sin imagen",
+    "codigo": "CH1003",
+    "stock": 15,
+    "id": 3
     },
     {
-    "title":"producto prueba2",
-    "description":"Este es un producto prueba2",
-    "price":200,"thumbnail":"Sin imagen",
-    "code":"bc123",
-    "stock":25,
-    "id":2
+    "titulo": "Chomba Polo Rose Mujer",
+    "descripcion": "Remera Aeropostale Chomba Polo Embrodery Rose Mujer Aero",
+    "precio": 200,
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_634209-MLA48013843189_102021-O.webp",
+    "codigo": "CH1004",
+    "stock": 25,
+    "id": 4
     },
     {
-    "title":"producto prueba3",
-    "description":"Este es un producto prueba3",
-    "price":200,
-    "thumbnail":"Sin imagen",
-    "code":"c123",
-    "stock":25,
-    "id":3
-    },
-    {
-    "title":"producto prueba4",
-    "description":"Este es un producto prueba4",
-    "price":200,
-    "thumbnail":"Sin imagen",
-    "code":"123",
-    "stock":25,
-    "id":4
-    },
-    {
-    "title":"producto prueba5",
-    "description":"Este es un producto prueba5",
-    "price":200,
-    "thumbnail":"Sin imagen",
-    "code":"23",
-    "stock":25,
-    "id":5
+    "titulo": "Chomba Penguin Blanca",
+    "descripcion": "Chomba Penguin Xl Blanca",
+    "precio": 200,
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_639787-MLA51079675439_082022-O.webp",
+    "codigo": "23",
+    "stock": 25,
+    "id": 5
     }
 ]
