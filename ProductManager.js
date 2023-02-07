@@ -23,14 +23,14 @@ class ProductManager {
                 const read = await fs.readFile(this.path, "utf-8");
                 let data = JSON.parse(read);
                 // comprueba si ya existe el elemento
-                if (data.some((elem) => elem.codigo === prodObj.codigo)) {
-                    throw "Codigo" + codigo + " ya existente.";
+                if (data.some((elem) => elem.code === prodObj.code)) {
+                    throw "Code " + code + " already exists, cannot add";
                 } else {
                     let newID;
                     !data.length ? (newID = 1) : (newID = data[data.length - 1].id + 1);
                     // guarda el producto en el array
                     data.push({ ...prodObj, id: newID });
-                    // escribe los datos en el archivo
+                    // Write data to the file
                     await fs.writeFile(this.path, JSON.stringify(data), "utf-8");
                 }
             } catch (err) {
@@ -113,7 +113,6 @@ class ProductManager {
 const manager = new ProductManager("./database.json");
 
 manager.getProducts();
-manager.getProductByID(2);
-
-manager.deleteProduct(3)
-manager.getProductByID(3);
+//manager.getProductByID(2);
+//manager.updateProduct(...)
+//manager.deleteProduct(3)
