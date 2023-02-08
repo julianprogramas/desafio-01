@@ -23,8 +23,8 @@ class ProductManager {
                 const read = await fs.readFile(this.path, "utf-8");
                 let data = JSON.parse(read);
                 // comprueba si ya existe el elemento
-                if (data.some((elem) => elem.code === prodObj.code)) {
-                    throw "Code " + code + " already exists, cannot add";
+                if (data.some((elem) => elem.codigo === prodObj.codigo)) {
+                    throw "Code " + codigo + " already exists, cannot add";
                 } else {
                     let newID;
                     !data.length ? (newID = 1) : (newID = data[data.length - 1].id + 1);
